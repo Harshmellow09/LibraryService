@@ -30,7 +30,7 @@ public class Main {
         System.out.println("+-----------------------------------------+"); 
 	}
 			
-		
+	// printMain method	
 	private void printMain() {
 		// Print menu
 		System.out.println("1.Show all Students");
