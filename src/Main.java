@@ -7,21 +7,20 @@ public class Main {
 	String currentChoice;
 	
 	public static void main(String[] args) {
-		//below the variables are defined for what the class needs 
+		// Below the variables are defined for what the class needs 
 		Main main = new Main();
 		main.runMain();
 		
-
-        //below will be the menu design 
+        // Below will be the menu design 
 	}
 	
 	public void runMain() {
 		printHeader();
-
+		
+		// While exit is not true, continue
 		while(!exit) {
 			printMain();	
 		}
-		
 	}
 		
 	private void printHeader() {
@@ -33,6 +32,7 @@ public class Main {
 			
 		
 	private void printMain() {
+		// Print menu
 		System.out.println("1.Show all Students");
 		System.out.println("2.Add Student");
 		System.out.println("3.Show all books ");
@@ -43,10 +43,14 @@ public class Main {
 		System.out.println("8.Check out");
 		System.out.println("9.Need Help?");
 		System.out.println("0.Exit menu");
+		
+		// Take user input and select option from menu
 		selection = sc.nextInt();
 		
+		// Use selection in switch statement
 		switch (selection)
         {		
+			// View all students
         	case 1 :
         		System.out.println("Would you like to view all Students");
         		System.out.println("Do you want to continue? Type Yes / No");
@@ -55,6 +59,7 @@ public class Main {
             		printMain();
         		}
 
+        	// Add new student
             case 2 :
             	System.out.println("Would you like to add a new student");
             	System.out.println("Do you want to continue? Type Yes / No");
@@ -63,6 +68,7 @@ public class Main {
             		printMain();
                 }
                 
+            // View all books
             case 3 :
             	System.out.println("Would you like to view all books?");
             	System.out.println("Do you want to continue? Type Yes / No");
@@ -71,6 +77,7 @@ public class Main {
             		printMain();
                 }
                 
+            // Add new book
             case 4 :
             	System.out.println("Would you like to add a new book?");
             	System.out.println("Do you want to continue? Type Yes / No");
@@ -79,6 +86,7 @@ public class Main {
             		printMain();
                 }
                 
+            // Search for book
             case 5 :
             	System.out.println("Would you like to Search a book?"); // needs switch case for int and String
             	System.out.println("Do you want to continue? Type Yes / No");
@@ -95,6 +103,7 @@ public class Main {
                 }
                 break;
            		    
+            // Update quantity of book
             case 6 :
             	System.out.println("Would you like to Upgrade a books quantity?");
             	System.out.println("Do you want to continue? Type Yes / No");
@@ -102,7 +111,8 @@ public class Main {
                 	printHeader();
             		printMain();
                 }
-            		
+                
+            // Check in book	
             case 7 :
             	System.out.println("Would you like to check in a book?");
             	System.out.println("Do you want to continue? Type Yes / No");
@@ -110,7 +120,8 @@ public class Main {
                 	printHeader();
             		printMain();
                 }
-            		
+               
+            // Check out book		
             case 8 :
             	System.out.println("Would you like to check out a book?");
             	System.out.println("Do you want to continue? Type Yes / No");
@@ -119,6 +130,7 @@ public class Main {
             		printMain();
                 }
             		
+            // Help with options
             case 9 :
             	System.out.println("Need Help with these options?");
             	System.out.println("Do you want to continue? Type Yes / No");
@@ -128,6 +140,7 @@ public class Main {
                 }
                 
                    		
+            // 
             case 0 :
             	System.out.println("Are you sure you would like to exit? Type Yes / No");
                 currentChoice = sc.next();  
