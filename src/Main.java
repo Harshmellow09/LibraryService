@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 	boolean exit=false;
@@ -68,6 +68,20 @@ public class Main {
             		printMain();
                 }
                 
+                /**
+                 * Get student name
+                 * Get student college id
+                 * Display back details and ask for confirmation
+                 * Store details
+                 * 
+                 * Store the details in a text file
+                 * Retrieve the details in a text file
+                 * Liam,Kelly,2141451
+                 * Rebecca,Kelly,1241341
+                 * getAllStudents()
+                 * findStudent()
+                 */
+                              
             // View all books
             case 3 :
             	System.out.println("Would you like to view all books?");
@@ -81,10 +95,32 @@ public class Main {
             case 4 :
             	System.out.println("Would you like to add a new book?");
             	System.out.println("Do you want to continue? Type Yes / No");
-                if (sc.next().equalsIgnoreCase("no")) {
+            	currentChoice = sc.next();
+                if (currentChoice.equalsIgnoreCase("no")) {
                 	printHeader();
             		printMain();
+                } 
+                else if (currentChoice.equalsIgnoreCase("yes")) {
+                	String isbn,name,author;
+                	int quantity = 0;
+                	System.out.println("Please enter the book ISBN number:");
+            		isbn = sc.next(); 
+            		System.out.println("Please enter the book name: ");
+            		name = sc.next();
+            		System.out.println("Please enter the books author: ");
+            		author = sc.next();
+            		System.out.println("Please enter the book quantity: ");
+            		quantity = sc.nextInt();
+                	HashSet<Book> set=new HashSet<Book>(); 
+                	Book b1=new Book(isbn,name,author,quantity);
+                	set.add(b1);
+                	for(Book b:set){  
+                		System.out.println(b.isbn+" "+b.name+" "+b.author+" "+b.quantity);  
+                	} 
+                	exit = true;
+                	break;
                 }
+                break;
                 
             // Search for book
             case 5 :
